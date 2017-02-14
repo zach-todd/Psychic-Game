@@ -20,27 +20,38 @@
 			var userGuess = event.key;
 			var letter= alphabet[Math.floor(Math.random()* alphabet.length)];
 				console.log("made it here");
-			if ((tries >= 1) && (userGuess!=letter)) {
+				if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "o") || (userGuess === "n") || (userGuess === "p") || (userGuess === "t") || (userGuess === "q") || (userGuess === "u") || (userGuess === "r") || (userGuess === "v") || (userGuess === "s") || (userGuess === "w") || (userGuess === "x") || (userGuess === "y") || (userGuess === "z")){
+				if ((tries >= 1) && (userGuess!=letter)) {
 				tries--;
-				alert("Wrong, Guess again. "+ "Tries left= "+ tries);
+				//alert("Wrong, Guess again. "+ "Tries left= "+ tries);
 				guess.push(userGuess);
-			}
-			else if (userGuess === letter){
+				console.log("Try");
+				}
+				else if (userGuess === letter){
 				wins++;
-				console.log("win if else");
-			}
-			else {
+				alert("You win!")
+				console.log("Win if else");
+				tries = 10;
+				guess = [];
+				}
+				else {
 				losses++;
 				console.log("loss else");
-				alert("no tries left you lose");
-
+				alert("No tries left. You lose.");
+				tries = 10;
+				guess = [];
+				}
+		
+		var html = "<h1>Psychic game!</h1> <p>Guess what letter I am thinking</p>" +
+			"<p> Wins: "+ wins + "</p>" +
+			"<p> Losses: "+ losses +"</p>" +
+			"<p> Tries left: "+ tries + "</p>"+
+			"<p> Guesses so far: "+ guess + "</p>"
+			document.querySelector("#heading").innerHTML = html;
+		}
+		else{ alert("Incorrect input")
 			}
 		}
-		var html = "<h1>Psychic game!</h1> <p>Guess what letter I am thinking</p>" +
-			"<p>wins: "+ wins + "</p>" +
-			"<p> losses: "+ losses +"</p>" +
-			"<p> tries left: "+ tries + "</p>"
-			"<p> Guesses so far: "+ guess + "</p>"
 		</script>
 	</body>
 </html>
