@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	
+	<head>
+		<meta charset="UTF-8">
+		<title>Psychic game</title>
+	</head>
+	<body>
+		<div id="heading">
+			<h1>Psychic game!</h1>
+			<p> Guess what letter I am thinking</p>
+		</div>
+		<script type="text/javascript">
+			var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+		var wins = 0;
+		var losses = 0;
+		var tries = 10;
+		var guess = [];
+		document.onkeyup = function(event){
+			var userGuess = event.key;
+			var letter= alphabet[Math.floor(Math.random()* alphabet.length)];
+				console.log("made it here");
+			if ((tries >= 1) && (userGuess!=letter)) {
+				tries--;
+				alert("Wrong, Guess again. "+ "Tries left= "+ tries);
+				guess.push(userGuess);
+			}
+			else if (userGuess === letter){
+				wins++;
+				console.log("win if else");
+			}
+			else {
+				losses++;
+				console.log("loss else");
+				alert("no tries left you lose");
+
+			}
+		}
+		var html = "<h1>Psychic game!</h1> <p>Guess what letter I am thinking</p>" +
+			"<p>wins: "+ wins + "</p>" +
+			"<p> losses: "+ losses +"</p>" +
+			"<p> tries left: "+ tries + "</p>"
+			"<p> Guesses so far: "+ guess + "</p>"
+		</script>
+	</body>
+</html>
