@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en-us">
-	
-	<head>
-		<meta charset="UTF-8">
-		<title>Psychic game</title>
-	</head>
-	<body>
-		<div id="heading">
-			<h1>Psychic game!</h1>
-			<p> Guess what letter I am thinking</p>
-		</div>
-		<script type="text/javascript">
-			var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+		
+		
+
+
+		var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 		var wins = 0;
 		var losses = 0;
 		var tries = 10;
@@ -52,6 +43,3 @@
 		else{ alert("Incorrect input")
 			}
 		}
-		</script>
-	</body>
-</html>
